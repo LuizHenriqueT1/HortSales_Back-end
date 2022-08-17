@@ -1,0 +1,5 @@
+package br.com.hortsales.resources.exception;
+
+public class FieldMessage {
+
+}

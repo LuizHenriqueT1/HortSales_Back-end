@@ -1,0 +1,5 @@
+package br.com.hortsales.services;
+
+public class UserDetailsServiceImpl {
+
+}

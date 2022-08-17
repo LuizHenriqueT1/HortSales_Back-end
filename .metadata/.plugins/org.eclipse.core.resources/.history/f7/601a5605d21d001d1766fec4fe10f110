@@ -1,0 +1,5 @@
+package br.com.hortsales.services.exception;
+
+public class DataIntegrityViolationException {
+
+}
