@@ -8,6 +8,7 @@ public class HortsalesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HortsalesApplication.class, args);
+        System.out.println("Servidor HortSales.com Funcionando localhost:8080");
 	}
 
 }
