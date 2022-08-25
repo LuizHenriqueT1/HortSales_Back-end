@@ -55,7 +55,7 @@ public class FuncionarioDTO extends Pessoa {
 		this.endereco = obj.getEndereco();
 		this.perfils = obj.getPerfils().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
 		this.dataCriacao = obj.getDataCriacao();
-		addPerfils(Perfil.FUNCIONARIO);
+		addPerfil(Perfil.FUNCIONARIO);
 	}
 	
 	public Integer getId() {
