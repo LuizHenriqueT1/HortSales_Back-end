@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import br.com.hortsales.domain.Casher;
 import br.com.hortsales.domain.Funcionario;
 import br.com.hortsales.domain.enums.Perfil;
+import br.com.hortsales.repositories.CasherRepository;
 import br.com.hortsales.repositories.FuncionarioRepository;
 
 @Service
@@ -15,6 +17,9 @@ public class DBService {
 	
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
+	
+	@Autowired 
+	private CasherRepository casherRepository;
 	
 	@Autowired
 	private BCryptPasswordEncoder encoder;
@@ -31,7 +36,13 @@ public class DBService {
 		f4.addPerfils(Perfil.FUNCIONARIO);
 		f4.addPerfils(Perfil.ADMIN);
 		
+		
+		Casher c1 = new Casher(null, 1.256);
+		Casher c2 = new Casher(null, 1.856);
+		Casher c3 = new Casher(null, 1.156);
+		
 		funcionarioRepository.saveAll(Arrays.asList(f1,f2,f3,f4));
+		casherRepository.saveAll(Arrays.asList(c1,c2,c3));
 	}
 
 }
