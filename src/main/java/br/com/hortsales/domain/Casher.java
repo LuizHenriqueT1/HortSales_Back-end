@@ -24,7 +24,7 @@ public class Casher implements Serializable{
 	protected Integer id;
 	
 	@Column(unique = true)
-	protected Double lucroDia;
+	protected Integer lucroDia;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataDoValor = LocalDate.now();
@@ -33,7 +33,7 @@ public class Casher implements Serializable{
 		super();
 	}
 	
-	public Casher(Integer id, Double lucroDia) {
+	public Casher(Integer id, Integer lucroDia) {
 		super();
 		this.id = id;
 		this.lucroDia = lucroDia;
@@ -54,11 +54,11 @@ public class Casher implements Serializable{
 		this.id = id;
 	}
 
-	public Double getLucroDia() {
+	public Integer getLucroDia() {
 		return lucroDia;
 	}
 
-	public void setLucroDia(Double lucroDia) {
+	public void setLucroDia(Integer lucroDia) {
 		this.lucroDia = lucroDia;
 	}
 
