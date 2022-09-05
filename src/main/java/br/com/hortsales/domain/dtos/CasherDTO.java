@@ -11,7 +11,7 @@ public class CasherDTO extends Casher{
 	private static final long serialVersionUID = 1L;
 	
 	protected Integer id;
-	protected Double lucroDia;
+	protected Integer lucroDia;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataDoValor = LocalDate.now();
@@ -35,11 +35,11 @@ public class CasherDTO extends Casher{
 		this.id = id;
 	}
 
-	public Double getLucroDia() {
+	public Integer getLucroDia() {
 		return lucroDia;
 	}
 
-	public void setLucroDia(Double lucroDia) {
+	public void setLucroDia(Integer lucroDia) {
 		this.lucroDia = lucroDia;
 	}
 
