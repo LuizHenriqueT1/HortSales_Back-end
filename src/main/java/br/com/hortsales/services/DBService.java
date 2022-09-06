@@ -37,9 +37,9 @@ public class DBService {
 		f4.addPerfils(Perfil.ADMIN);
 		
 		
-		Casher c1 = new Casher(null, 1256);
-		Casher c2 = new Casher(null, 1856);
-		Casher c3 = new Casher(null, 1156);
+		Casher c1 = new Casher(null, 1256.49);
+		Casher c2 = new Casher(null, 1856.59);
+		Casher c3 = new Casher(null, 1156.48);
 		
 		funcionarioRepository.saveAll(Arrays.asList(f1,f2,f3,f4));
 		casherRepository.saveAll(Arrays.asList(c1,c2,c3));
