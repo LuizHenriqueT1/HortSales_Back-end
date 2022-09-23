@@ -1,9 +1,11 @@
 package br.com.hortsales.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
+import br.com.hortsales.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +31,8 @@ public class CasherService {
 		return repository.save(newObj);
 	}
 
-	
+    public List findLucroMesEAno(Integer mes, Integer ano) {
+		Optional<List> obj = repository.findSomaLucroByMesAno(mes, ano);
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado nessa data"));
+    }
 }
