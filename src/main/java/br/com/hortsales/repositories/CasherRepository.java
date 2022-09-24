@@ -11,6 +11,9 @@ import java.util.Optional;
 
 public interface CasherRepository extends JpaRepository<Casher, Integer> {
 
-    @Query(value = "CALL sps_soma_vendas_mes(:mes, :ano)", nativeQuery = true)
+    @Query(value = "CALL sps_soma_lucros_mes(:mes, :ano)", nativeQuery = true)
     Optional<List> findSomaLucroByMesAno(Integer mes, Integer ano);
+
+    @Query(value = "CALL sps_media_mes(:mes, :ano)", nativeQuery = true)
+    Optional<List> findMediaLucroMesByMesAno(Integer mes, Integer ano);
 }

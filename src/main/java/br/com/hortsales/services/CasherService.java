@@ -30,9 +30,12 @@ public class CasherService {
 		Casher newObj = new Casher(objDto);
 		return repository.save(newObj);
 	}
-
     public List findLucroMesEAno(Integer mes, Integer ano) {
 		Optional<List> obj = repository.findSomaLucroByMesAno(mes, ano);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado nessa data"));
     }
+	public List findMediaLucroMesEAno(Integer mes, Integer ano) {
+		Optional<List> obj = repository.findMediaLucroMesByMesAno(mes, ano);
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado nessa data"));
+	}
 }
