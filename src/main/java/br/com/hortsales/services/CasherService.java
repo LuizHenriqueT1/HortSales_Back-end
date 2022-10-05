@@ -1,5 +1,6 @@
 package br.com.hortsales.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +38,9 @@ public class CasherService {
 	public List findMediaLucroMesEAno(Integer mes, Integer ano) {
 		Optional<List> obj = repository.findMediaLucroMesByMesAno(mes, ano);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado nessa data"));
+	}
+	public List findSomaLucrosUltimosSeteDias() {
+	    Optional<List> obj = repository.findSomaLucrosUltimosSeteDias();
+	    return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado nos ultimos 7 dias"));
 	}
 }

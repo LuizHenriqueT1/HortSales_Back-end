@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import br.com.hortsales.domain.Casher;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,4 +17,7 @@ public interface CasherRepository extends JpaRepository<Casher, Integer> {
 
     @Query(value = "CALL sps_media_mes(:mes, :ano)", nativeQuery = true)
     Optional<List> findMediaLucroMesByMesAno(Integer mes, Integer ano);
+    
+    @Query(value = "CALL sps_soma_lucros_semana()", nativeQuery = true)
+    Optional<List> findSomaLucrosUltimosSeteDias();
 }
