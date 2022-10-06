@@ -58,4 +58,9 @@ public class CasherResource {
 		List obj = service.findSomaLucrosUltimosTrintaDias();
 		return ResponseEntity.ok().body(obj);
 	}
+	@GetMapping(value = "/media-diaria-mes-anterior")
+	public ResponseEntity findMediaDiariaLucrosUltimoMes() {
+		List obj = service.findMediaDiariaLucrosUltimoMes();
+		return ResponseEntity.ok().body(obj);
+	}
 }
