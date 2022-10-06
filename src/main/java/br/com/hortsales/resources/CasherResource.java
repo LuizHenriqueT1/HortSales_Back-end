@@ -53,4 +53,9 @@ public class CasherResource {
 	    List obj = service.findSomaLucrosUltimosSeteDias();
 	    return ResponseEntity.ok().body(obj);
 	}
+	@GetMapping(value = "/lucros-ultimo-mes")
+	public ResponseEntity findSomaLucrosUltimosTrintaDias() {
+		List obj = service.findSomaLucrosUltimosTrintaDias();
+		return ResponseEntity.ok().body(obj);
+	}
 }

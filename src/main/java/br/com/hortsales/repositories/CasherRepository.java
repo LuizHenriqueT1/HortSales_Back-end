@@ -20,4 +20,7 @@ public interface CasherRepository extends JpaRepository<Casher, Integer> {
     
     @Query(value = "CALL sps_soma_lucros_semana()", nativeQuery = true)
     Optional<List> findSomaLucrosUltimosSeteDias();
+
+    @Query(value = "CALL sps_soma_lucros_ultimos_trinta_dias()", nativeQuery = true)
+    Optional<List> findSomaLucrosUltimosTrintaDias();
 }

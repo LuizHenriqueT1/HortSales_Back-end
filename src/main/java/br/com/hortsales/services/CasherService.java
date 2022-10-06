@@ -43,4 +43,8 @@ public class CasherService {
 	    Optional<List> obj = repository.findSomaLucrosUltimosSeteDias();
 	    return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado nos ultimos 7 dias"));
 	}
+	public List findSomaLucrosUltimosTrintaDias() {
+		Optional<List> obj = repository.findSomaLucrosUltimosTrintaDias();
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado nos ultimos 7 dias"));
+	}
 }
