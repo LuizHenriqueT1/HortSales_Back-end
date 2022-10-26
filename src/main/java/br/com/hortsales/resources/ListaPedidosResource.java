@@ -20,19 +20,18 @@ public class ListaPedidosResource {
     @Autowired
     private ListaPedidosService service;
 
-    @GetMapping
-    public ResponseEntity<List<ListaPedidosDTO>> findAllListaPedidos() {
-        List<ListaPedidos> list = service.findAllListaPedidos();
-        List<ListaPedidosDTO> listDto = list.stream()
-                .map(ped -> new ListaPedidosDTO(ped)).collect(Collectors.toList());
-        return ResponseEntity.ok().body(listDto);
-    }
-
     @PostMapping
     public ResponseEntity<ListaPedidosDTO> createListaPedidos(@Valid @RequestBody ListaPedidosDTO objDto) {
         ListaPedidos newObj = service.create(objDto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(newObj.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ListaPedidosDTO>> findAllPedido() {
+        List<ListaPedidos> list = service.findAllPedido();
+        List<ListaPedidosDTO> listDto = list.stream().map(obj -> new ListaPedidosDTO(obj)).collect(Collectors.toList());
+        return ResponseEntity.ok().body(listDto);
     }
 }
