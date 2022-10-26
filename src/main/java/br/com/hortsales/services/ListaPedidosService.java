@@ -25,4 +25,8 @@ public class ListaPedidosService {
         ListaPedidos newObj = new ListaPedidos(objDto);
         return repository.save(newObj);
     }
+
+    public List<ListaPedidos> findAllPedido() {
+        return repository.findAllPedido();
+    }
 }
