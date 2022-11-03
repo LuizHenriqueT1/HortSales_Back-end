@@ -51,4 +51,9 @@ public class CasherService {
 		Optional<List> obj = repository.findMediaDiariaLucrosUltimoMes();
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado no mês anterior"));
 	}
+
+	public List findSomaTotalVendasDoMesNosUltimosDoseMeses() {
+		Optional<List> obj = repository.findSomaTotalVendasDoMesNosUltimosDoseMeses();
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado!!"));
+	}
 }
