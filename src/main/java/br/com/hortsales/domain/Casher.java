@@ -22,8 +22,7 @@ public class Casher implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Integer id;
-	
-	@Column(unique = true)
+
 	protected Double lucroDia;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
