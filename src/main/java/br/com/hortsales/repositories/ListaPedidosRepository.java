@@ -15,4 +15,7 @@ public interface ListaPedidosRepository extends JpaRepository<ListaPedidos, Inte
 
     @Query(value = "CALL sps_produto_mais_pedido_trinta_dias()", nativeQuery = true)
     Optional<List> findProdutoMaisPedidoUltimosTrintaDias();
+
+    @Query(value = "CALL sps_produtos_mais_pedidos_doze_meses()", nativeQuery = true)
+    Optional<List> findProdutosMaisPedidosUltimosDozeMeses();
 }
