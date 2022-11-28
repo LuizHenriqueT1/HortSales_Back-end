@@ -1,5 +1,5 @@
 DELIMITER //
-	CREATE PROCEDURE sps_total_vendasDoMes_ultimosDoseMeses()
+	CREATE PROCEDURE sps_faturamentos_ultimosDozeMeses()
 		BEGIN 
 			SELECT 
 				EXTRACT(MONTH FROM data_do_valor) AS Mes,
@@ -11,7 +11,10 @@ DELIMITER //
 				ORDER BY ano DESC, mes DESC;
 		END //
 DELIMITER ;
-DROP PROCEDURE sps_total_vendasDoMes_ultimosDoseMeses;
-CALL sps_total_vendasDoMes_ultimosDoseMeses();
+CALL sps_faturamentos_ultimosDozeMeses();
+
+
+
+
 
     
