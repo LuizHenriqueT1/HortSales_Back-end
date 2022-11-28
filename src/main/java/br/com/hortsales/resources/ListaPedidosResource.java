@@ -34,4 +34,10 @@ public class ListaPedidosResource {
         List<ListaPedidosDTO> listDto = list.stream().map(obj -> new ListaPedidosDTO(obj)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDto);
     }
+
+    @GetMapping(value = "/produto-mais-pedido-ultimos-trintadias")
+    public ResponseEntity findProdutoMaisPedidoUltimosTrintaDias() {
+        List obj = service.findProdutoMaisPedidoUltimosTrintaDias();
+        return ResponseEntity.ok().body(obj);
+    }
 }
