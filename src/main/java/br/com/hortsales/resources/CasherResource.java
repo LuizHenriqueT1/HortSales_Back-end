@@ -64,9 +64,9 @@ public class CasherResource {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@GetMapping(value = "/totalVendasMes-ultimos-doseMeses")
-		public ResponseEntity findSomaTotalVendasDoMesNosUltimosDoseMeses() {
-		List obj = service.findSomaTotalVendasDoMesNosUltimosDoseMeses();
+	@GetMapping(value = "/faturamentos-ultimos-doze-meses")
+		public ResponseEntity findFaturamentoUltimosDozeMeses() {
+		List obj = service.findFaturamentoUltimosDozeMeses();
 		return ResponseEntity.ok().body(obj);
 		}
 }

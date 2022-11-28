@@ -36,4 +36,9 @@ public class ListaPedidosService {
         Optional<List> obj = repository.findProdutoMaisPedidoUltimosTrintaDias();
         return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado!!"));
     }
+
+    public List findProdutosMaisPedidosUltimosDozeMeses() {
+        Optional<List> obj = repository.findProdutosMaisPedidosUltimosDozeMeses();
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Nenhum valor encontrado!!"));
+    }
 }

@@ -40,4 +40,10 @@ public class ListaPedidosResource {
         List obj = service.findProdutoMaisPedidoUltimosTrintaDias();
         return ResponseEntity.ok().body(obj);
     }
+
+    @GetMapping(value = "/produtos-mais-pedidos-ultimos-dozemeses")
+    public ResponseEntity findProdutosMaisPedidosUltimosDozeMeses() {
+        List obj = service.findProdutosMaisPedidosUltimosDozeMeses();
+        return ResponseEntity.ok().body(obj);
+    }
 }

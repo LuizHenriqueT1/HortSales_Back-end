@@ -27,6 +27,6 @@ public interface CasherRepository extends JpaRepository<Casher, Integer> {
     @Query(value = "CALL sps_media_diaria_lucros_mes_anterior()", nativeQuery = true)
     Optional<List> findMediaDiariaLucrosUltimoMes();
 
-    @Query(value = "CALL sps_total_vendasDoMes_ultimosDoseMeses()", nativeQuery = true)
-    Optional<List> findSomaTotalVendasDoMesNosUltimosDoseMeses();
+    @Query(value = "CALL sps_faturamentos_ultimosDozeMeses", nativeQuery = true)
+    Optional<List> findFaturamentoUltimosDozeMeses();
 }
